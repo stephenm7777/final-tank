@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class OutOfBounds : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform player; 
+    public float x, y, z; 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OnTriggerExit(Collider other){ 
+        if(other.gameObject.tag == "Player"){
+            player.position = new Vector3(x, y, z);
+        }
     }
 }
