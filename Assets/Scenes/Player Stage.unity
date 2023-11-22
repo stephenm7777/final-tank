@@ -3515,13 +3515,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1931693713}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 260bf9b47d6e15649b820f0de17cc119, type: 3}
+  m_Script: {fileID: 11500000, guid: fa373a8381f5555438ca0b4107314746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  x: 3321967
-  y: 7839826
-  z: 6245842
+  player: {fileID: 7228864641444886371, guid: b4e8a6d9e53d67b4b93090a29a0cca4b, type: 3}
+  x: 4.48
+  y: 0.5
+  z: 0.37829
 --- !u!65 &1931693715
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3553,7 +3553,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.1, y: 4.3, z: 0}
-  m_LocalScale: {x: 98.5652, y: 18.266, z: 24.388}
+  m_LocalScale: {x: 302.8348, y: 50.182297, z: 216.36665}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
