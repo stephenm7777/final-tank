@@ -39,7 +39,7 @@ public class Login : MonoBehaviour
 
         foreach (string line in credentials)
         {
-             //everything after
+            //everything after
             string[] parts = line.Split(':');
             if (parts.Length == 2 && parts[0].Equals(usernameInput.text) && parts[1].Equals(passwordInput.text))
             {
@@ -47,5 +47,4 @@ public class Login : MonoBehaviour
                 break;
             }
         }
-
-        if (is
+    }

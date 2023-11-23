@@ -6,41 +6,48 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Login : MonoBehaviour
+public class Register : MonoBehaviour
 {
+
     public InputField usernameInput;
     public InputField passwordInput;
-    public Button loginButton;
-    public Button goToRegisterButton;
+    public Button registerButton;
+    public Button goToLoginButton;
 
-    private List<string> credentials; // Use List<T> instead of ArrayList
+    ArrayList credentials;
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
+        //replace with sql lite call
     {
-        loginButton.onClick.AddListener(LoginUser);
-        goToRegisterButton.onClick.AddListener(MoveToRegister);
+        registerButton.onClick.AddListener(writeStuffToFile);
+        goToLoginButton.onClick.AddListener(goToLoginScene);
 
-        string filePath = Application.dataPath + "/logins.txt";
-        if (File.Exists(filePath))
+        if (File.Exists(Application.dataPath + "/logins.txt"))
         {
-            credentials = new List<string>(File.ReadAllLines(filePath));
+            credentials = new ArrayList(File.ReadAllLines(Application.dataPath + "/logins.txt"));
         }
         else
         {
-            Debug.Log("logins file doesn't exist");
+            File.WriteAllText(Application.dataPath + "/logins.txt", "");
         }
+
     }
 
-    private void LoginUser()
+    void goToLoginScene()
+    {
+        SceneManager.LoadScene("Login");
+    }
+
+
+    void writeStuffToFile()
     {
         bool isExists = false;
 
-        credentials = new List<string>(File.ReadAllLines(Application.dataPath + "/logins.txt"));
-
-        foreach (string line in credentials)
+        credentials = new ArrayList(File.ReadAllLines(Application.dataPath + "/logins.txt"));
+        foreach (var i in credentials)
         {
-            string[] parts = line.Split(':');
-            if (parts.Length == 2 && parts[0].Equals(usernameInput.text) && parts[1].Equals(passwordInput.text))
+            if (i.ToString().Contains(usernameInput.text))
             {
                 isExists = true;
                 break;
@@ -49,22 +56,15 @@ public class Login : MonoBehaviour
 
         if (isExists)
         {
-            Debug.Log($"Logging in '{usernameInput.text}'");
-            LoadWelcomeScreen();
+            Debug.Log($"Username '{usernameInput.text}' already exists");
         }
         else
         {
-            Debug.Log("Incorrect login");
+            credentials.Add(usernameInput.text + ":" + passwordInput.text);
+            File.WriteAllLines(Application.dataPath + "/logins.txt", (String[])credentials.ToArray(typeof(string)));
+            Debug.Log("Account Registered");
         }
     }
 
-    private void MoveToRegister()
-    {
-        SceneManager.LoadScene("Register");
-    }
 
-    private void LoadWelcomeScreen()
-    {
-        SceneManager.LoadScene("WelcomeScreen");
-    }
 }
