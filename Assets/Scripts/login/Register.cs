@@ -44,7 +44,7 @@ public class Register : MonoBehaviour
         bool isExists = false;
 
         log = new ArrayList(File.ReadAllLines(Application.dataPath + "/logins.txt"));
-        foreach (var i in credentials)
+        foreach (var i in log)
         {
             if (i.ToString().Contains(usernameInput.text))
             {
@@ -60,7 +60,7 @@ public class Register : MonoBehaviour
         else
         {
             log.Add(usernameInput.text + ":" + passwordInput.text);
-            File.WriteAllLines(Application.dataPath + "/logins.txt", (String[])credentials.ToArray(typeof(string)));
+            File.WriteAllLines(Application.dataPath + "/logins.txt", (String[])log.ToArray(typeof(string)));
             Debug.Log("Account Registered");
         }
     }
