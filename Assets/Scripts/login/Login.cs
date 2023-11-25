@@ -12,7 +12,7 @@ public class Login : MonoBehaviour
     public InputField usernameInput;
     public InputField passwordInput;
     public Button loginButton;
-    public Button goToRegisterButton;
+    public Button registerButton;
 
     ArrayList log;
 
@@ -20,7 +20,7 @@ public class Login : MonoBehaviour
     void Start()
     {
         loginButton.onClick.AddListener(login);
-        goToRegisterButton.onClick.AddListener(registerScene);
+        registerButton.onClick.AddListener(register);
 
         if (File.Exists(Application.dataPath + "/logins.txt"))
         {
@@ -63,15 +63,37 @@ public class Login : MonoBehaviour
         {
             Debug.Log("Incorrect login information");
         }
-    }
-
-    void registerScene()
-    {
-        SceneManager.LoadScene("Register");
-    }
 
     void welcomeScene()
     {
         SceneManager.LoadScene("WelcomeScreen");
     }
+}
+    void register()
+    {
+        bool isExists = false;
+
+        log = new ArrayList(File.ReadAllLines(Application.dataPath + "/logins.txt"));
+        foreach (var i in log)
+        {
+            if (i.ToString().Contains(usernameInput.text))
+            {
+                isExists = true;
+                break;
+            }
+        }
+
+        if (isExists)
+        {
+            Debug.Log($"Username '{usernameInput.text}' already exists");
+        }
+        else
+        {
+            log.Add(usernameInput.text + ":" + passwordInput.text);
+            File.WriteAllLines(Application.dataPath + "/logins.txt", (String[])log.ToArray(typeof(string)));
+            Debug.Log("Account Registered");
+        }
+    }
+
+
 }
