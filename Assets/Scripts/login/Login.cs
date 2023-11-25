@@ -5,12 +5,14 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 
 public class Login : MonoBehaviour
 {
 
-    public InputField usernameInput;
-    public InputField passwordInput;
+    public TMP_InputField usernameInput;
+    public TMP_InputField passwordInput;
     public Button loginButton;
     public Button registerButton;
 
