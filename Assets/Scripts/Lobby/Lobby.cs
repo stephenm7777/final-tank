@@ -10,13 +10,21 @@ public class Lobby : MonoBehaviourPunCallbacks
     public InputField roomInputField;
     public GameObject lobbyPanel; 
     public GameObject roomPanel; 
-    public Text roomName ; 
-    public void Start(){ 
-        PhotonNetwork.JoinLobby(); 
+    public Text roomName; 
+
+        public void Awake()
+    {
+        if (PhotonNetwork.NetworkClientState == ClientState.Disconnected)
+        {
+            PhotonNetwork.ConnectUsingSettings();
+        }
     }
-    public void OnClickCreate(){
-        if(roomInputField.text.Length >= 1){
-            PhotonNetwork.CreateRoom(roomInputField.text, new RoomOptions(){ MaxPlayers = 3}); 
+
+    public void OnClickCreate()
+    {
+        if (roomInputField.text.Length >= 1)
+        {
+            PhotonNetwork.CreateRoom(roomInputField.text, new RoomOptions() { MaxPlayers = 3 });
         }
     }
 
@@ -25,5 +33,10 @@ public class Lobby : MonoBehaviourPunCallbacks
         lobbyPanel.SetActive(false); 
         roomPanel.SetActive(true); 
         roomName.text = "Room name: " + PhotonNetwork.CurrentRoom.Name; 
+    }
+
+    public override void OnConnectedToMaster()
+    {
+        PhotonNetwork.JoinLobby();
     }
 }
