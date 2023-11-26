@@ -59,16 +59,16 @@ public class Login : MonoBehaviour
         if (isExists)
         {
             Debug.Log($"Logging in '{usernameInput.text}'");
-            welcomeScene();
+            gotoLobby();
         }
         else
         {
             Debug.Log("Incorrect login information");
         }
 
-    void welcomeScene()
+    void gotoLobby()
     {
-        SceneManager.LoadScene("WelcomeScreen");
+        SceneManager.LoadScene("Lobby");
     }
 }
     void register()
