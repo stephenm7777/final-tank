@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 15328873}
   - component: {fileID: 15328872}
   - component: {fileID: 15328871}
+  - component: {fileID: 15328875}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -228,6 +229,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &15328875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15328870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 918ff57e841ce7b45b915e4affc284f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usernameInput: {fileID: 591277511}
+  passwordInput: {fileID: 1134795331}
+  loginButton: {fileID: 1001557939}
+  registerButton: {fileID: 1865531584}
 --- !u!1 &182378263
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,7 +413,7 @@ GameObject:
   - component: {fileID: 591277512}
   - component: {fileID: 591277511}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: Username
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1064,7 +1081,7 @@ GameObject:
   - component: {fileID: 1001557940}
   - component: {fileID: 1001557939}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Login
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1185,7 +1202,7 @@ GameObject:
   - component: {fileID: 1134795332}
   - component: {fileID: 1134795331}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: Password
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1638,7 +1655,7 @@ GameObject:
   - component: {fileID: 1865531585}
   - component: {fileID: 1865531584}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Register
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
