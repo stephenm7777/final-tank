@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 2754261011125638780}
   - component: {fileID: 8810582705963024268}
   - component: {fileID: 808886091598934896}
+  - component: {fileID: 927656634592628262}
   m_Layer: 5
   m_Name: RoomItem
   m_TagString: Untagged
@@ -200,3 +201,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &927656634592628262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5467805462485406907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc77c7561ddf0f4481bd105fa3ee6ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
