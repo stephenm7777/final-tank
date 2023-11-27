@@ -10,6 +10,7 @@ public class EscMenu : MonoBehaviour
     [SerializeField] private Button resumeBtn;
     [SerializeField] private Button disconnectBtn;
 
+
     public static bool isDisplay = false;
 
     // Update is called once per frame
@@ -38,8 +39,8 @@ public class EscMenu : MonoBehaviour
         disconnectBtn.onClick.AddListener(() =>
         {
             NetworkManager.Singleton.Shutdown();
-            
             UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
         });
     }
+
 }
