@@ -1,5 +1,9 @@
 # Change Logs
 
+11/27/23 5:50 PM
+NOTE: Check pull request
+- Added multiple spawn points
+
 11/26/23 3:36 AM
 - Created a UI for the escape menu
     - Simple menu for resume and disconnect
@@ -12,6 +16,6 @@
 
 
 # Plans
-- Create ~~ UI and ~~ logic to disconnect user
+- Create ~~UI and~~ logic to disconnect user
 - Health system
     - Kicks users when health is depleted
