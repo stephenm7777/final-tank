@@ -1,11 +1,17 @@
-using System.Collections;
+using Photon.Pun;
 using System.Collections.Generic;
+using Photon.Realtime;
 using UnityEngine;
-using UnityEngine.UI; 
-public class RoomItem : MonoBehaviour
+
+public class RoomItem : MonoBehaviourPunCallbacks
 {
-   public Text roomName; 
-   public void SetRoomName(string _roomName){
-        roomName.text = _roomName; 
-   }
+   public GameObject RoomPrefab; 
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+         for(int i = 0; i < roomList.Count; i++){
+            print(roomList[i].Name);
+            GameObject Room = Instantiate(RoomPrefab, Vector3.zero, Quaternion.identity, GameObject.Find("Content").transform);
+            Room.GetComponent<Room>().Name.text = roomList[i].Name; 
+         }  
+    }
 }
