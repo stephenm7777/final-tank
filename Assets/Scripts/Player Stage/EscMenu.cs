@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,7 +37,9 @@ public class EscMenu : MonoBehaviour
 
         disconnectBtn.onClick.AddListener(() =>
         {
-            Application.Quit();
+            NetworkManager.Singleton.Shutdown();
+            
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
         });
     }
 }
