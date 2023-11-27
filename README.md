@@ -1,5 +1,8 @@
 # Change Logs
 
+11/27/23 6:57 PM
+- Added logic for disconnecting users
+
 11/27/23 5:50 PM
 NOTE: Check pull request
 - Added multiple spawn points
@@ -16,6 +19,6 @@ NOTE: Check pull request
 
 
 # Plans
-- Create ~~UI and~~ logic to disconnect user
+- ~~Create UI and logic to disconnect user~~
 - Health system
     - Kicks users when health is depleted
