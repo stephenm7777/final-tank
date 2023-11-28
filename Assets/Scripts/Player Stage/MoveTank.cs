@@ -4,7 +4,7 @@ using UnityEngine;
 using Unity.Netcode;
 using Photon.Pun;
 
-public class MoveTank : MonoBehaviour
+public class MoveTank : NetworkBehaviour
 {
     public float moveSpeed = 5.0f;
 
@@ -43,8 +43,7 @@ public class MoveTank : MonoBehaviour
 
     void Update()
     {
-        if (controlsLocked)
-        {
+        if(controlsLocked){
             Debug.Log("Control locked");
             return;
         }
