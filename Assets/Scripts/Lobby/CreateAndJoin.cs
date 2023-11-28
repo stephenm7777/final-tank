@@ -21,6 +21,7 @@ public class CreateAndJoin : MonoBehaviourPunCallbacks
    public override void OnJoinedRoom(){
         Debug.Log("Entering Stage");
         lobbyPanel.SetActive(false);
+        PhotonNetwork.IsMessageQueueRunning = false;
         PhotonNetwork.LoadLevel("Player Stage");
    }
    public void JoinRoomInList(string roomName)

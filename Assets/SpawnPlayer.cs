@@ -18,6 +18,7 @@ public class SpawnPlayer : MonoBehaviour
         spawnLocation[3] = new Vector3(-82.1f, 0.5f, -97.7f);
 
         int randomNumber = Random.Range(0, 4);
+        PhotonNetwork.IsMessageQueueRunning = true;
         PhotonNetwork.Instantiate(player.name, spawnLocation[randomNumber], Quaternion.identity);
     }
 }

@@ -51,21 +51,19 @@ public class MoveTank : MonoBehaviour
     //}
 
     void Update()
-    {
-        if (controlsLocked)
-        {
-            Debug.Log("Control locked");
-            return;
-        }
-
-        
+    {   
         if (view.IsMine)
         {
+            if (controlsLocked)
+            {
+                Debug.Log("Control locked");
+                return;
+            }
+
             moveInput = Input.GetAxis("Vertical");
             rotationInput = Input.GetAxis("Horizontal");
             RotateWheels(rotationInput, moveInput);
         }
-        
     }
 
     public void LockControls()
