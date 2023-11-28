@@ -842,11 +842,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9de82ec743bb24449a99f5cf1e325d61, type: 3}
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> ca641c02f4bcabfbeb0b5f0cb31063dca5ccde7b
 --- !u!1 &679200207 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3503318476722469206, guid: dc84a58afe1344547a230a5cb3c072c8, type: 3}
@@ -873,7 +868,6 @@ MonoBehaviour:
   - {fileID: 1664269440}
   - {fileID: 1611211913}
   wheelRotationSpeed: 200
-<<<<<<< HEAD
   spawnLocation: []
 --- !u!114 &679200209
 MonoBehaviour:
@@ -895,17 +889,12 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
-=======
->>>>>>> ca641c02f4bcabfbeb0b5f0cb31063dca5ccde7b
+
 --- !u!1 &702283220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3745786531496338126, guid: dc84a58afe1344547a230a5cb3c072c8, type: 3}
   m_PrefabInstance: {fileID: 1331272756}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> ca641c02f4bcabfbeb0b5f0cb31063dca5ccde7b
 --- !u!1001 &707075715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3294,11 +3283,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9de82ec743bb24449a99f5cf1e325d61, type: 3}
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> ca641c02f4bcabfbeb0b5f0cb31063dca5ccde7b
 --- !u!1 &1769786432 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3354916976622783175, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
@@ -3325,10 +3309,7 @@ MonoBehaviour:
   - {fileID: 470689112}
   - {fileID: 2109770506}
   wheelRotationSpeed: 200
-<<<<<<< HEAD
   spawnLocation: []
-=======
->>>>>>> ca641c02f4bcabfbeb0b5f0cb31063dca5ccde7b
 --- !u!54 &1769786434
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3377,10 +3358,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9107852, y: 1.125915, z: 2.6642036}
   m_Center: {x: 0.0000003874302, y: 0.06295732, z: -0.038929284}
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> ca641c02f4bcabfbeb0b5f0cb31063dca5ccde7b
 --- !u!4 &1797516563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 498872, guid: 9de82ec743bb24449a99f5cf1e325d61, type: 3}

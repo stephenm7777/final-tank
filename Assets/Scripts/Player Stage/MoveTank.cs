@@ -52,11 +52,15 @@ public class MoveTank : NetworkBehaviour
         if(controlsLocked){
             Debug.Log("Control locked");
             return;
-        }
-        moveInput = Input.GetAxis("Vertical");
-        rotationInput = Input.GetAxis("Horizontal");
+        } 
 
-        RotateWheels(rotationInput, moveInput);
+        if (view.IsMine)
+        {
+            moveInput = Input.GetAxis("Vertical");
+            rotationInput = Input.GetAxis("Horizontal");
+            RotateWheels(rotationInput, moveInput);
+        }
+           
     }
 
     public void LockControls()
