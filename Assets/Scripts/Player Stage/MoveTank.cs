@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun; 
+using Unity.Netcode;
+using Photon.Pun;
 
 public class MoveTank : MonoBehaviour
 {
@@ -25,29 +26,19 @@ public class MoveTank : MonoBehaviour
 
     public Vector3[] spawnLocation;
 
-    PhotonView view;
+    public PhotonView view;
 
     
     // Start is called before the first frame update
     void Start()
     {
-       // spawnLocation = new Vector3[4];
-
-        //spawnLocation[0] = new Vector3(64.3f, 0.5f, -65f);
-        //spawnLocation[1] = new Vector3(65.3f, 0.5f, 67.3f);
-        //spawnLocation[2] = new Vector3(-69.9f, 0.5f, 67.3f);
-        //spawnLocation[3] = new Vector3(-82.1f, 0.5f, -97.7f);
-        
         rb = GetComponent<Rigidbody>();
-        //int randomNumber = Random.Range(0, 4);
-        //transform.position = spawnLocation[randomNumber];
-        view = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
     //public void OnNetworkSpawn(){
-     //   Debug.Log("Tank Spawned");
-     //   if(!IsOwner) Destroy(this);
+       // Debug.Log("Tank Spawned");
+        //if(!IsOwner) Destroy(this);
     //}
 
     void Update()
@@ -57,15 +48,14 @@ public class MoveTank : MonoBehaviour
             Debug.Log("Control locked");
             return;
         }
-
         
+
         if (view.IsMine)
         {
             moveInput = Input.GetAxis("Vertical");
             rotationInput = Input.GetAxis("Horizontal");
             RotateWheels(rotationInput, moveInput);
-        }
-        
+        }   
     }
 
     public void LockControls()

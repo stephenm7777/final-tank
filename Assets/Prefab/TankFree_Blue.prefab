@@ -574,10 +574,10 @@ GameObject:
   - component: {fileID: 7240814957456569876}
   - component: {fileID: 3245607674569897701}
   - component: {fileID: 7723448376348180487}
-  - component: {fileID: 5262673573871902817}
   - component: {fileID: 1828169381285888073}
   - component: {fileID: 5755777304480688643}
   - component: {fileID: 7624955612069971201}
+  - component: {fileID: -7928607983349190928}
   m_Layer: 0
   m_Name: TankFree_Blue
   m_TagString: Player
@@ -703,26 +703,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &5262673573871902817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9096031549424806840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1109884504
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!114 &1828169381285888073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,6 +724,8 @@ MonoBehaviour:
   - {fileID: 4101536843769642636}
   - {fileID: 1111828839678472441}
   wheelRotationSpeed: 200
+  spawnLocation: []
+  view: {fileID: 0}
 --- !u!114 &5755777304480688643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -786,3 +768,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7928607983349190928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9096031549424806840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
