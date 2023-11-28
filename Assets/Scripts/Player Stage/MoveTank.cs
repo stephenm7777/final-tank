@@ -1,31 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.Netcode; 
+using Unity.Netcode;
 
 public class MoveTank : NetworkBehaviour
 {
     public float moveSpeed = 5.0f;
-
     public float rotationSpeed = 120.0f;
-
     public GameObject[] leftWheels;
-
     public GameObject[] rightWheels;
-    
     public float wheelRotationSpeed = 200.0f;
-
     private Rigidbody rb;
-
     private float moveInput;
-
-    private float rotationInput; 
-
+    private float rotationInput;
     private bool controlsLocked = false;
-
     public Vector3[] spawnLocation;
 
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -35,50 +25,44 @@ public class MoveTank : NetworkBehaviour
         spawnLocation[1] = new Vector3(65.3f, 0.5f, 67.3f);
         spawnLocation[2] = new Vector3(-69.9f, 0.5f, 67.3f);
         spawnLocation[3] = new Vector3(-82.1f, 0.5f, -97.7f);
-        
+
         rb = GetComponent<Rigidbody>();
         int randomNumber = Random.Range(0, 4);
         transform.position = spawnLocation[randomNumber];
     }
 
     // Update is called once per frame
-    public void OnNetworkSpawn(){
+    public void OnNetworkSpawn()
+    {
         Debug.Log("Tank Spawned");
-        if(!IsOwner) Destroy(this);
+        if (!IsOwner) Destroy(this);
     }
 
     void Update()
-<<<<<<< HEAD
-    {   
-        if (view.IsMine)
+    {
+        if (controlsLocked)
         {
-            if (controlsLocked)
-            {
-                Debug.Log("Control locked");
-                return;
-            }
+            Debug.Log("Control locked");
+            return;
+        }
 
+        if (IsOwner)
+        {
             moveInput = Input.GetAxis("Vertical");
             rotationInput = Input.GetAxis("Horizontal");
             RotateWheels(rotationInput, moveInput);
         }
     }
 
-    public void LockControls()
+    public  void OnNetworkTakeOwnership()
     {
-        Debug.Log("Locking Controls");
-        controlsLocked = true;
-    }
-
-    public void UnlockControls()
-    {
-        Debug.Log("Locking Controls");
         controlsLocked = false;
     }
 
     void FixedUpdate()
     {
-        if(controlsLocked){
+        if (controlsLocked)
+        {
             return;
         }
 
@@ -101,8 +85,8 @@ public class MoveTank : NetworkBehaviour
 
     void RotateWheels(float rotation, float moveInput)
     {
-        float wheelRotation = moveInput * wheelRotationSpeed * Time.deltaTime; 
-        // move the left wheels 
+        float wheelRotation = moveInput * wheelRotationSpeed * Time.deltaTime;
+        // move the left wheels
         foreach (GameObject wheel in leftWheels)
         {
             if (wheel != null)
@@ -110,7 +94,7 @@ public class MoveTank : NetworkBehaviour
                 wheel.transform.Rotate(wheelRotation - rotationInput * wheelRotationSpeed * Time.deltaTime, 0.0f, 0.0f);
             }
         }
-        
+
         foreach (GameObject wheel in rightWheels)
         {
             if (wheel != null)
