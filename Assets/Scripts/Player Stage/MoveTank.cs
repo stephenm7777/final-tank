@@ -46,24 +46,26 @@ public class MoveTank : MonoBehaviour
 
     // Update is called once per frame
     //public void OnNetworkSpawn(){
-     //   Debug.Log("Tank Spawned");
-     //   if(!IsOwner) Destroy(this);
+    //   Debug.Log("Tank Spawned");
+    //   if(!IsOwner) Destroy(this);
     //}
 
     void Update()
-    {   
+    {
+        if (controlsLocked)
+        {
+            Debug.Log("Control locked");
+            return;
+        }
+
+
         if (view.IsMine)
         {
-            if (controlsLocked)
-            {
-                Debug.Log("Control locked");
-                return;
-            }
-
             moveInput = Input.GetAxis("Vertical");
             rotationInput = Input.GetAxis("Horizontal");
             RotateWheels(rotationInput, moveInput);
         }
+
     }
 
     public void LockControls()
