@@ -17,7 +17,7 @@ public class PlayerTransform : NetworkBehaviour {
     }
 
     public override void OnNetworkSpawn() {
-        if (!IsOwner) Destroy(transform.GetComponent<MoveTank>());
+        if (!IsOwner) Destroy(transform.GetComponent<MoveTank>());  
     }
 
     private void Update() {
@@ -29,7 +29,7 @@ public class PlayerTransform : NetworkBehaviour {
 
     private void TransmitState() {
         var state = new PlayerNetworkState {
-            Position = _rb.position,
+            Position = new Vector3(24f, 0.5f, -42f), //_rb.position,
             Rotation = transform.rotation.eulerAngles
         };
 
