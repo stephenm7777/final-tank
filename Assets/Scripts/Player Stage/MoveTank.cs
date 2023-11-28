@@ -46,8 +46,8 @@ public class MoveTank : MonoBehaviour
 
     // Update is called once per frame
     //public void OnNetworkSpawn(){
-    //   Debug.Log("Tank Spawned");
-    //   if(!IsOwner) Destroy(this);
+     //   Debug.Log("Tank Spawned");
+     //   if(!IsOwner) Destroy(this);
     //}
 
     void Update()
@@ -58,13 +58,14 @@ public class MoveTank : MonoBehaviour
             return;
         }
 
-
+            
         if (view.IsMine)
         {
             moveInput = Input.GetAxis("Vertical");
             rotationInput = Input.GetAxis("Horizontal");
             RotateWheels(rotationInput, moveInput);
         }
+            
 
     }
 
