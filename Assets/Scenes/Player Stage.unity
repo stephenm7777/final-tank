@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -556,6 +556,51 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3308724752575992159, guid: 997823ade0e2fc249a876fa159f69cc3, type: 3}
   m_PrefabInstance: {fileID: 1179749980}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &375514050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 375514052}
+  - component: {fileID: 375514051}
+  m_Layer: 5
+  m_Name: Chat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &375514051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375514050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671559ecf74114eda8a4e9bff6859b6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chatPrefab: {fileID: 820463594111354245, guid: d88754970b30c428fa46c9ac2cd2fbfe, type: 3}
+--- !u!4 &375514052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375514050}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 690.0734, y: 434.147, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &388784184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -983,7 +1028,6 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
-
 --- !u!1 &702283220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3745786531496338126, guid: dc84a58afe1344547a230a5cb3c072c8, type: 3}
@@ -1663,12 +1707,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.3626889, y: -0, z: -0, w: 0.93191034}
   m_LocalPosition: {x: 1.12, y: 111.6, z: -160.6}
-
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 42.531, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1038801922
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3451,7 +3494,6 @@ MonoBehaviour:
   - {fileID: 2109770506}
   wheelRotationSpeed: 200
   spawnLocation: []
-  view: {fileID: 0}
 --- !u!54 &1769786434
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4079,6 +4121,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1931693716}
+  - {fileID: 375514052}
   - {fileID: 1202018494}
   - {fileID: 1038801922}
   - {fileID: 1179749980}
@@ -4086,3 +4129,4 @@ SceneRoots:
   - {fileID: 1031196905}
   - {fileID: 153374319}
   - {fileID: 1211521084}
+  - {fileID: 1331272756}
