@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0199c11aa6f514784c5c69cd8378d8, type: 3}
   m_Name: PlayFabEditorPrefsSO
   m_EditorClassIdentifier: 
-  DevAccountEmail: 
-  DevAccountToken: 
-  SelectedStudio: 
-  SdkPath: 
+  DevAccountEmail: blockproductions123@gmail.com
+  DevAccountToken: sjetktf5487bngjm49s7wnfc8tum4pmtsotj1o35dppum4xj53s7x3hyg3x7pyp5gsz1h8myfrksytfs4ywkoobbzjuiyguwnr8a144wh8p4c9xwri7dekpdt4jrbobszntrofypwjfy6aa9w6e1ih6f36kptp1rctaj7up3rtqya88ahyfrnenjrqfp47145enx9bdo
+  SelectedStudio: tank game
+  SdkPath: Assets/PlayFabSDK
   EdExPath: 
   LocalCloudScriptPath: 
   PanelIsShown: 0
-  curMainMenuIdx: 0
+  curMainMenuIdx: 1
   curSubMenuIdx: 0
