@@ -17,11 +17,25 @@ public class Login : MonoBehaviour
     public Button loginButton;
     public Button registerButton;
     const string LAST_EMAIL_KEY = "LAST_EMAIL", LAST_PASSWORD_KEY = "LAST_PASSWORD";
+    private TMP_InputField[] inputFields;
+    private int currentInputField = 0;
 
     void Start()
     {
+        inputFields = new TMP_InputField[] { emailInput, passwordInput, usernameInput };
+        PlayFabSettings.staticSettings.TitleId = "A4DFC";
         loginButton.onClick.AddListener(LoginPressed);
         registerButton.onClick.AddListener(RegisterPressed);
+    }
+
+    void Update()
+    {
+        // Detect Tab key press to move to the next input field
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            currentInputField = (currentInputField + 1) % inputFields.Length;
+            inputFields[currentInputField].Select();
+        }
     }
 
     void LoginPressed()
@@ -92,12 +106,6 @@ public class Login : MonoBehaviour
         error => PlayFabFailure(error));
     }
 
-    void OnRegisterSuccess()
-    {
-        messageText.text = "Registered and logged in!";
-        SceneManager.LoadScene("Lobby");
-    }
-
     void PlayFabFailure(PlayFabError error)
     {
         messageText.text = "Error: " + error.ErrorMessage;
@@ -107,6 +115,6 @@ public class Login : MonoBehaviour
     void OnLoginSuccess()
     {
         messageText.text = "Logged in successfully!";
-        SceneManager.LoadScene("Lobby");
+        SceneManager.LoadScene("ConnectToServer");
     }
 }

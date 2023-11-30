@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 15328872}
   - component: {fileID: 15328871}
   - component: {fileID: 15328875}
+  - component: {fileID: 15328876}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -246,10 +247,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageText: {fileID: 1131820970}
-  emailInput: {fileID: 0}
+  emailInput: {fileID: 591277511}
   passwordInput: {fileID: 1134795331}
+  usernameInput: {fileID: 1275710207}
   loginButton: {fileID: 1001557939}
   registerButton: {fileID: 1865531584}
+--- !u!114 &15328876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15328870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 918ff57e841ce7b45b915e4affc284f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageText: {fileID: 0}
+  emailInput: {fileID: 0}
+  passwordInput: {fileID: 0}
+  usernameInput: {fileID: 0}
+  loginButton: {fileID: 0}
+  registerButton: {fileID: 0}
 --- !u!1 &182378263
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,7 +634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1671,7 +1691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1980,7 +2000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
