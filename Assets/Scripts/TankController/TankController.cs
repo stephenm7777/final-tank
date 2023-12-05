@@ -12,6 +12,7 @@ namespace Tank {
         private TankInput input; 
         public float tankSpeed = 30f; 
         public float tankRotationSpeed = 30f; 
+        public Transform reticleTransform;
         #endregion
 
         #region BuiltInMethods
@@ -23,6 +24,7 @@ namespace Tank {
         void FixedUpdate(){
             if(rb && input){
                 HandleMovement();
+                HandleReticle();
             }
         }
         #endregion
@@ -35,6 +37,11 @@ namespace Tank {
             //Rotate the Tank 
             Quaternion wantedRotation = transform.rotation * Quaternion.Euler(Vector3.up * (tankRotationSpeed * input.RotationInput * Time.deltaTime));
             rb.MoveRotation(wantedRotation);
+        }
+        protected virtual void HandleReticle(){
+            if(reticleTransform){
+                reticleTransform.position = input.ReticlePosition;
+            }
         }
         #endregion
         
