@@ -403,8 +403,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1726231244}
   - {fileID: 1565104755}
+  - {fileID: 1726231244}
   m_Father: {fileID: 636862347}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1670,8 +1670,9 @@ MonoBehaviour:
   inputCreate: {fileID: 1689467568}
   inputJoin: {fileID: 1676231595}
   lobbyPanel: {fileID: 636862346}
-  roomPanel: {fileID: 0}
-  roomText: {fileID: 0}
+  roomPanel: {fileID: 68620133}
+  player: {fileID: 820463594111354245, guid: d88754970b30c428fa46c9ac2cd2fbfe, type: 3}
+  roomText: {fileID: 1148858296}
 --- !u!1 &1148858294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,8 +1907,9 @@ MonoBehaviour:
   inputCreate: {fileID: 1689467568}
   inputJoin: {fileID: 1676231595}
   lobbyPanel: {fileID: 636862346}
-  roomPanel: {fileID: 0}
-  roomText: {fileID: 0}
+  roomPanel: {fileID: 68620133}
+  player: {fileID: 820463594111354245, guid: d88754970b30c428fa46c9ac2cd2fbfe, type: 3}
+  roomText: {fileID: 1148858296}
 --- !u!4 &1268532303
 Transform:
   m_ObjectHideFlags: 0
@@ -2280,8 +2282,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565104754}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.000030517578, y: -0.000030517578, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3466,8 +3468,9 @@ MonoBehaviour:
   inputCreate: {fileID: 1689467568}
   inputJoin: {fileID: 1676231595}
   lobbyPanel: {fileID: 636862346}
-  roomPanel: {fileID: 0}
-  roomText: {fileID: 0}
+  roomPanel: {fileID: 68620133}
+  player: {fileID: 820463594111354245, guid: d88754970b30c428fa46c9ac2cd2fbfe, type: 3}
+  roomText: {fileID: 1148858296}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
