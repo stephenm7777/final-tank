@@ -30,9 +30,7 @@ public class BulletHandler : NetworkBehaviour
             Destroy(gameObject);
         }
     }
-    public void OnNetworkSpawn(){ 
-        if(!IsOwner) Destroy(this);
-    }
+    
     public void LockControls()
     {
         Debug.Log("Locking Controls");
