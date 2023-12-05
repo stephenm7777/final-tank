@@ -8,7 +8,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks, ILobbyCallbacks {
     private void Start()
     { 
         Debug.Log("Connecting to Photon...");
-        // Sync the scenes 
+        PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.ConnectUsingSettings(); 
     }
 

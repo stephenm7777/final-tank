@@ -2,6 +2,7 @@ using UnityEngine;
 using Photon.Pun; 
 using TMPro;
 using Photon.Realtime;
+using Photon.Pun.Demo.Cockpit;
 
 
 public class CreateAndJoin : MonoBehaviourPunCallbacks
@@ -9,6 +10,8 @@ public class CreateAndJoin : MonoBehaviourPunCallbacks
    public TMP_InputField inputCreate; 
    public TMP_InputField inputJoin; 
    public GameObject lobbyPanel; 
+   public GameObject roomPanel; 
+   public TMP_Text roomText; 
 
    public void CreateRoom(){
         Debug.Log("Room Created");
@@ -21,7 +24,9 @@ public class CreateAndJoin : MonoBehaviourPunCallbacks
    public override void OnJoinedRoom(){
         Debug.Log("Entering Stage");
         lobbyPanel.SetActive(false);
-        PhotonNetwork.LoadLevel("TerrainDemoScene");
+        roomPanel.SetActive(true);
+        roomText.text = "Room name" + PhotonNetwork.CurrentRoom.Name;
+        
    }
    public void JoinRoomInList(string roomName)
     {
