@@ -22,6 +22,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks, ILobbyCallbacks {
     private void ConnectToPhoton(){
         if (!PhotonNetwork.IsConnected)
         {
+            dissconnect.SetActive(false);
             PhotonNetwork.ConnectUsingSettings();
         }
     }
@@ -36,7 +37,7 @@ public class ConnectToServer : MonoBehaviourPunCallbacks, ILobbyCallbacks {
     public override void OnDisconnected(DisconnectCause cause)
     {
         Debug.Log($"Disconnected from Photon. Cause: {cause}");
-        
+        SceneManager.LoadScene("Disconnected");
         ConnectToPhoton();
     }
     public override void OnRoomListUpdate(List<RoomInfo> roomList){
