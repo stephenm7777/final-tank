@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Login.unity
+    guid: 10979ab0d6be346428d78ec02ff7932f
+  - enabled: 1
     path: Assets/Scenes/ConnectToServer.unity
     guid: c3267b3226e842340a190a91e503a18a
   - enabled: 1
@@ -15,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Player Stage.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/Disconnected.unity
+    guid: 80950e198ffaa024b9dd4dfceec1c61e
+  - enabled: 0
     path: Assets/Scenes/ChatRoom.unity
     guid: db94735b0299f4aa2b78808aa3c96067
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: f0260fec9e79a9143ac9da3d55c0532f
   m_configObjects: {}
