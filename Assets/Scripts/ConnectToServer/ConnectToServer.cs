@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 public class ConnectToServer : MonoBehaviourPunCallbacks, ILobbyCallbacks {
+    public GameObject dissconnect; 
+
     private void Start()
     { 
         Debug.Log("Connecting to Photon...");
@@ -17,16 +19,26 @@ public class ConnectToServer : MonoBehaviourPunCallbacks, ILobbyCallbacks {
         Debug.Log("Connected to Photon Master Server!");
         PhotonNetwork.JoinLobby();
     }
+    private void ConnectToPhoton(){
+        if (!PhotonNetwork.IsConnected)
+        {
+            dissconnect.SetActive(false);
+            PhotonNetwork.ConnectUsingSettings();
+        }
+    }
+
 
     public override void OnJoinedLobby()
     {
         Debug.Log("Joined Photon Lobby!");
-        SceneManager.LoadScene("Lobby");
+        PhotonNetwork.LoadLevel("Lobby");
     }
 
     public override void OnDisconnected(DisconnectCause cause)
     {
         Debug.Log($"Disconnected from Photon. Cause: {cause}");
+        SceneManager.LoadScene("Disconnected");
+        ConnectToPhoton();
     }
     public override void OnRoomListUpdate(List<RoomInfo> roomList){
         Debug.Log("Room list updated!");

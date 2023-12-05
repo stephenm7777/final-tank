@@ -10,7 +10,7 @@ public class CreateAndJoin : MonoBehaviourPunCallbacks
    public TMP_InputField inputCreate; 
    public TMP_InputField inputJoin; 
    public GameObject lobbyPanel; 
-   public GameObject roomPanel; 
+   public GameObject roomPanel;
    public TMP_Text roomText; 
 
    public void CreateRoom(){
@@ -25,9 +25,10 @@ public class CreateAndJoin : MonoBehaviourPunCallbacks
         Debug.Log("Entering Stage");
         lobbyPanel.SetActive(false);
         roomPanel.SetActive(true);
-        roomText.text = "Room name" + PhotonNetwork.CurrentRoom.Name;
+        roomText.text = "Room name: " + PhotonNetwork.CurrentRoom.Name;
+        GameRequestManager.Instance.SendJoinRequest(PhotonNetwork.CurrentRoom.Name);
+    }
         
-   }
    public void JoinRoomInList(string roomName)
     {
         PhotonNetwork.JoinRoom(roomName);
