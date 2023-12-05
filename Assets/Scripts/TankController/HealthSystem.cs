@@ -8,7 +8,7 @@ public class HealthSystem: MonoBehaviour
     private int health; 
     private int healthMax; 
     public event EventHandler OnHealthChange; 
-    public int attack; 
+
     public HealthSystem(int healthMax){
         this.healthMax = healthMax; 
         health = healthMax;
@@ -23,11 +23,8 @@ public class HealthSystem: MonoBehaviour
         health -= damageAmount;
         if(health < 0 ) health = 0; 
         if(OnHealthChange != null) OnHealthChange(this, EventArgs.Empty);
-    }
-    public void DealDamage(GameObject target){
-        var atm = target.GetComponent<HealthSystem>();
-        if(atm != null){
-            atm.Damage(attack);
-        }
+        /*if(health == 0){
+            Add here a scene that makes them say "Game Over" and transfer them back into the lobby
+        }*/
     }
 }

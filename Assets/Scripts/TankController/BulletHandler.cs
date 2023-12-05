@@ -21,6 +21,15 @@ public class BulletHandler : NetworkBehaviour
             
         }
     }
+     private void OnCollisionEnter(Collision collision){
+        if (collision.gameObject.CompareTag("Tank")){
+            HealthSystem tankHealth = collision.gameObject.GetComponent<HealthSystem>();
+            if (tankHealth != null){
+                tankHealth.Damage(10);
+            }
+            Destroy(gameObject);
+        }
+    }
     public void OnNetworkSpawn(){ 
         if(!IsOwner) Destroy(this);
     }
