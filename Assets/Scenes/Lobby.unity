@@ -1671,7 +1671,6 @@ MonoBehaviour:
   inputJoin: {fileID: 1676231595}
   lobbyPanel: {fileID: 636862346}
   roomPanel: {fileID: 68620133}
-  player: {fileID: 820463594111354245, guid: d88754970b30c428fa46c9ac2cd2fbfe, type: 3}
   roomText: {fileID: 1148858296}
 --- !u!1 &1148858294
 GameObject:
@@ -1885,6 +1884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1268532303}
   - component: {fileID: 1268532302}
+  - component: {fileID: 1268532304}
   m_Layer: 0
   m_Name: CreateAndJoin
   m_TagString: Untagged
@@ -1908,7 +1908,6 @@ MonoBehaviour:
   inputJoin: {fileID: 1676231595}
   lobbyPanel: {fileID: 636862346}
   roomPanel: {fileID: 68620133}
-  player: {fileID: 820463594111354245, guid: d88754970b30c428fa46c9ac2cd2fbfe, type: 3}
   roomText: {fileID: 1148858296}
 --- !u!4 &1268532303
 Transform:
@@ -1925,6 +1924,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1268532304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268532301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e10bf9688658f0c4f9503e688175e123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1307495601
 GameObject:
   m_ObjectHideFlags: 0
@@ -3469,7 +3480,6 @@ MonoBehaviour:
   inputJoin: {fileID: 1676231595}
   lobbyPanel: {fileID: 636862346}
   roomPanel: {fileID: 68620133}
-  player: {fileID: 820463594111354245, guid: d88754970b30c428fa46c9ac2cd2fbfe, type: 3}
   roomText: {fileID: 1148858296}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
