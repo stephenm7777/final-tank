@@ -10,8 +10,10 @@ public class RoomItem : MonoBehaviourPunCallbacks
     {
          for(int i = 0; i < roomList.Count; i++){
             print(roomList[i].Name);
-            GameObject Room = Instantiate(RoomPrefab, Vector3.zero, Quaternion.identity, GameObject.Find("Content").transform);
-            Room.GetComponent<Room>().Name.text = roomList[i].Name; 
+            if (roomList[i].Name != "ChatRoom"){
+               GameObject Room = Instantiate(RoomPrefab, Vector3.zero, Quaternion.identity, GameObject.Find("Content").transform);
+               Room.GetComponent<Room>().Name.text = roomList[i].Name; 
+            }
          }  
     }
 }
