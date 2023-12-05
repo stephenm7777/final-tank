@@ -17,4 +17,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ChatRoom.unity
     guid: db94735b0299f4aa2b78808aa3c96067
+
   m_configObjects: {}

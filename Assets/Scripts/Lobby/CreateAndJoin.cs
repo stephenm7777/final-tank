@@ -20,17 +20,8 @@ public class CreateAndJoin : MonoBehaviourPunCallbacks
    }
    public override void OnJoinedRoom(){
         Debug.Log("Entering Stage");
-
-        if (PhotonNetwork.CurrentRoom.Name == "ChatRoom")
-        {
-          PhotonNetwork.LoadLevel("ChatRoom");
-        }
-        else
-        {
-          lobbyPanel.SetActive(false);
-          PhotonNetwork.LoadLevel("Player Stage");
-        }
-        
+        lobbyPanel.SetActive(false);
+        PhotonNetwork.LoadLevel("TerrainDemoScene");
    }
    public void JoinRoomInList(string roomName)
     {
