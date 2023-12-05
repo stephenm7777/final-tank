@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
-public class HealthSystem: MonoBehaviour
+public class HealthSystem: MonoBehaviourPunCallbacks
 {
     private int health; 
     private int healthMax; 
