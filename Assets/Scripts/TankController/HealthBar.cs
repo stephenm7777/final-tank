@@ -13,7 +13,5 @@ public class HealthBar : MonoBehaviour
     private void HealthSystem_OnHealthChange(object sender, System.EventArgs e){
         transform.Find("Bar").localScale = new UnityEngine.Vector3(healthSystem.GetHealthPercentage(), 1);
     }
-    private void Update(){
-        // transform.Find("Bar").localScale = new UnityEngine.Vector3(healthSystem.GetHealthPercentage(), 1);
-    }
+
 }
