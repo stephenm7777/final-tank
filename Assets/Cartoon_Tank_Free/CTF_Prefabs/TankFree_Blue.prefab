@@ -195,8 +195,8 @@ GameObject:
   - component: {fileID: 8808128122493214712}
   - component: {fileID: 7171296931125007811}
   - component: {fileID: 2517921759764873}
-  - component: {fileID: 1683848229805888558}
   - component: {fileID: 7971146721027312518}
+  - component: {fileID: 1683848229805888558}
   m_Layer: 0
   m_Name: TankFree_Blue
   m_TagString: Untagged
@@ -322,6 +322,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &7971146721027312518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153093373755847779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2095168133
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &1683848229805888558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,26 +363,6 @@ MonoBehaviour:
   - {fileID: 7561097175505383651}
   - {fileID: 5461544126743618544}
   wheelRotationSpeed: 200
---- !u!114 &7971146721027312518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153093373755847779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3870009830
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!1 &1397629665669033979
 GameObject:
   m_ObjectHideFlags: 0
