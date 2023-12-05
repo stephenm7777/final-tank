@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.Netcode; 
+using Unity.Netcode;
+using System;
 
 public class BulletHandler : NetworkBehaviour
 {
@@ -10,12 +11,14 @@ public class BulletHandler : NetworkBehaviour
     public GameObject objectPrefab;
     private bool controlsLocked = false;
 
+
     // Update is called once per frame
     void Update()
     {
         if (!controlsLocked && Input.GetKeyDown("space"))
         {
             SpawnObject();
+            
         }
     }
     public void OnNetworkSpawn(){ 
