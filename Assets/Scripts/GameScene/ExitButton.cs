@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class ExitButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public void OnClickLeaveGame(){
+        if (PhotonNetwork.IsConnected){
+            PhotonNetwork.LeaveRoom();
+        }
+        else
+        {
+            LoadLobbyScene();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void LoadLobbyScene()
     {
-        
+        PhotonNetwork.LoadLevel("Lobby");
     }
 }
