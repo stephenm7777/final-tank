@@ -1,8 +1,6 @@
 using UnityEngine;
 using Photon.Pun;
-using Photon.Pun.Demo.Cockpit;
 using Photon.Realtime;
-using System.Linq;
 using System.Collections.Generic;
 
 public class GameRequestManager : MonoBehaviourPunCallbacks
