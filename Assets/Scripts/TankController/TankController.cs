@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun; 
 namespace Tank { 
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(TankInput))]
@@ -14,20 +14,25 @@ namespace Tank {
         public float tankRotationSpeed = 30f; 
         public Transform reticleTransform;
         public Transform turrentTransform; 
+        PhotonView view; 
         #endregion
 
         #region BuiltInMethods
         void Start(){
             rb = GetComponent<Rigidbody>();
             input = GetComponent<TankInput>();
+            view = GetComponent<PhotonView>();
         }
         
         void FixedUpdate(){
-            if(rb && input){
+        if(view.IsMine){
+                if(rb && input){
                 HandleMovement();
                 HandleReticle();
                 HandleTurret();
             }
+        }
+            
         }
         #endregion
 

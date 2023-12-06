@@ -17,13 +17,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Player Stage.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Scenes/Disconnected.unity
-    guid: 80950e198ffaa024b9dd4dfceec1c61e
+
   - enabled: 1
-    path: Assets/Scenes/ChatRoom.unity
-    guid: db94735b0299f4aa2b78808aa3c96067
+    path: Assets/Scenes/Login.unity
+    guid: 10979ab0d6be346428d78ec02ff7932f
+
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: f0260fec9e79a9143ac9da3d55c0532f
+    path: Assets/Scenes/Forgot password.unity
+    guid: 63aaf4a72d3a9a14199e70166cd0d597
   m_configObjects: {}
