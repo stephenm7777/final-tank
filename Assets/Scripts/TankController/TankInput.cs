@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun; 
 
 namespace Tank
 {
@@ -28,19 +29,21 @@ namespace Tank
         public float RotationInput{
             get{return rotationInput;}
         }
+        PhotonView view;
         #endregion
 
         #region BuiltIn Methods 
+        void Start(){
+            view = GetComponent<PhotonView>();
+        }
         void Update(){
-            if(camera){ 
-                HandleInputs();
-            }
+            if(view.IsMine){
+                if(camera){ 
+                    HandleInputs();
+                }
+            } 
         }
 
-        private void OnDrawGizmos(){
-            Gizmos.color = Color.red; 
-            Gizmos.DrawSphere(reticlePosition, 2.0f);
-        }
         #endregion
 
         #region Custom Methods
@@ -50,7 +53,6 @@ namespace Tank
             if(Physics.Raycast(screenRay, out hit)){
                 reticlePosition = hit.point; 
                 reticleNormal = hit.normal;
-                
             }
             forwardInput = Input.GetAxis("Vertical");
             rotationInput = Input.GetAxis("Horizontal");
