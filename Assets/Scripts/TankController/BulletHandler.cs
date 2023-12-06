@@ -13,14 +13,17 @@ public class BulletHandler : NetworkBehaviour
     private bool controlsLocked = false;
     PhotonView view; 
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (!controlsLocked && Input.GetKeyDown("space") && view.IsMine)
-        {
+    void Start(){
+            view = GetComponent<PhotonView>();
+    }
+        
+    void Update(){
+        if(view.IsMine){
+            if (!controlsLocked && Input.GetKeyDown("space")){
             SpawnObject();
-            
+            }
         }
+        
     }
      private void OnCollisionEnter(Collision collision){
         if (collision.gameObject.CompareTag("Tank")){
@@ -32,23 +35,10 @@ public class BulletHandler : NetworkBehaviour
         }
     }
     
-    public void LockControls()
-    {
-        Debug.Log("Locking Controls");
-        controlsLocked = true;
-    }
-
-    public void UnlockControls()
-    {
-        Debug.Log("Unlocking Controls");
-        controlsLocked = false;
-    }
 
     void SpawnObject()
     {
-        if(controlsLocked){
-            return;
-        }
+       
         Vector3 spawnPosition = transform.position;
         Quaternion spawnRotation = Quaternion.identity;
 
