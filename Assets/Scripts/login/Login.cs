@@ -16,6 +16,7 @@ public class Login : MonoBehaviour
     public TMP_InputField usernameInput;
     public Button loginButton;
     public Button registerButton;
+    public Button forgotPassword;
     const string LAST_EMAIL_KEY = "LAST_EMAIL", LAST_PASSWORD_KEY = "LAST_PASSWORD";
     private TMP_InputField[] inputFields;
     private int currentInputField = 0;
@@ -26,6 +27,7 @@ public class Login : MonoBehaviour
         PlayFabSettings.staticSettings.TitleId = "A4DFC";
         loginButton.onClick.AddListener(LoginPressed);
         registerButton.onClick.AddListener(RegisterPressed);
+        forgotPassword.onClick.AddListener(forgotPasswordToScene);
     }
 
     void Update()
@@ -37,7 +39,10 @@ public class Login : MonoBehaviour
             inputFields[currentInputField].Select();
         }
     }
-
+    void forgotPasswordToScene()
+    {
+        SceneManager.LoadScene("Forgot password");
+    }
     void LoginPressed()
     {
         LoginUser(emailInput.text, passwordInput.text);

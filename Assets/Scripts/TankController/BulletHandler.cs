@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 using System;
+using Photon.Pun;
 
 public class BulletHandler : NetworkBehaviour
 {
@@ -10,16 +11,19 @@ public class BulletHandler : NetworkBehaviour
     public float bulletTimeToLive = 3.0f;
     public GameObject objectPrefab;
     private bool controlsLocked = false;
+    PhotonView view; 
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (!controlsLocked && Input.GetKeyDown("space"))
-        {
+    void Start(){
+            view = GetComponent<PhotonView>();
+    }
+        
+    void Update(){
+        if(view.IsMine){
+            if (!controlsLocked && Input.GetKeyDown("space")){
             SpawnObject();
-            
+            }
         }
+        
     }
      private void OnCollisionEnter(Collision collision){
         if (collision.gameObject.CompareTag("Tank")){
@@ -31,23 +35,10 @@ public class BulletHandler : NetworkBehaviour
         }
     }
     
-    public void LockControls()
-    {
-        Debug.Log("Locking Controls");
-        controlsLocked = true;
-    }
-
-    public void UnlockControls()
-    {
-        Debug.Log("Unlocking Controls");
-        controlsLocked = false;
-    }
 
     void SpawnObject()
     {
-        if(controlsLocked){
-            return;
-        }
+       
         Vector3 spawnPosition = transform.position;
         Quaternion spawnRotation = Quaternion.identity;
 

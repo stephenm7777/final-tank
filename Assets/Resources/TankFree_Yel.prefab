@@ -61,9 +61,9 @@ GameObject:
   - component: {fileID: 6442651365163790970}
   - component: {fileID: 8097792732109382354}
   - component: {fileID: 2753885862142252911}
-  - component: {fileID: 3669636744009357821}
   - component: {fileID: 967434736783566057}
   - component: {fileID: 3365417265300766966}
+  - component: {fileID: 7578523549986347076}
   m_Layer: 0
   m_Name: TankFree_Yel
   m_TagString: Tank
@@ -164,7 +164,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 7578523549986347076}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -229,22 +230,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 8298870738232066573, guid: e8ec5fa42a4ef0c44ae5b6d6d96d7ecd, type: 3}
---- !u!114 &3669636744009357821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091377559907799122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c66fd4e3cb31cae448e62fb8fade0f5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tankSpeed: 74.1
-  tankRotationSpeed: 64.9
-  reticleTransform: {fileID: 7322583894276897316}
-  turrentTransform: {fileID: 7974211581296261330}
 --- !u!114 &967434736783566057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +255,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   view: {fileID: 3548973442525263036}
+--- !u!114 &7578523549986347076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091377559907799122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &1264800729066298057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,6 +1341,7 @@ GameObject:
   - component: {fileID: 5337763363120680315}
   - component: {fileID: 6656213392846588334}
   - component: {fileID: 6579656907885834719}
+  - component: {fileID: 7199501279535586924}
   m_Layer: 0
   m_Name: BulletSpawn
   m_TagString: Untagged
@@ -1374,7 +1376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1527200266
+  GlobalObjectIdHash: 961941083
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -1397,3 +1399,25 @@ MonoBehaviour:
   launchSpeed: 200
   bulletTimeToLive: 2
   objectPrefab: {fileID: 4032486680806963122, guid: 4a2691a06d2be4e4cb20248df28a62a5, type: 3}
+--- !u!114 &7199501279535586924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932649228604732342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
