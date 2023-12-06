@@ -28,7 +28,6 @@ public class CreateAndJoin : MonoBehaviourPunCallbacks
           lobbyPanel.SetActive(false);
           roomPanel.SetActive(true);
           roomText.text = "Room name: " + PhotonNetwork.CurrentRoom.Name;
-          GameRequestManager.Instance.SendJoinRequest(PhotonNetwork.CurrentRoom.Name);
         }
     }
         

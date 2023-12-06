@@ -8,7 +8,7 @@ public class PlayerInd : MonoBehaviour
     public PhotonView view; 
     private void Awake(){
         if(!view.IsMine){
-            this.gameObject.SetActive(false);
+            this.gameObject.SetActive(true);
         }
     }
 
