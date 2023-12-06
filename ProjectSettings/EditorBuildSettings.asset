@@ -17,9 +17,11 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Player Stage.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+
   - enabled: 1
     path: Assets/Scenes/Login.unity
     guid: 10979ab0d6be346428d78ec02ff7932f
+
   - enabled: 1
     path: Assets/Scenes/Forgot password.unity
     guid: 63aaf4a72d3a9a14199e70166cd0d597

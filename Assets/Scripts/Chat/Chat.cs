@@ -12,6 +12,7 @@ public class ChatSystem : MonoBehaviourPunCallbacks
 
     public void SendChatMessage()
     {
+        Debug.Log("Send Chat Message");
         string message = messageInput.text;
         if (!string.IsNullOrEmpty(message))
         {
