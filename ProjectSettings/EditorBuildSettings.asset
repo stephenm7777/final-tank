@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Player Stage.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Disconnected.unity
     guid: 80950e198ffaa024b9dd4dfceec1c61e
   - enabled: 1
