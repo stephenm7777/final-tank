@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 3669636744009357821}
   - component: {fileID: 967434736783566057}
   - component: {fileID: 3365417265300766966}
+  - component: {fileID: 7578523549986347076}
   m_Layer: 0
   m_Name: TankFree_Yel
   m_TagString: Tank
@@ -164,7 +165,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 7578523549986347076}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -270,6 +272,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   view: {fileID: 3548973442525263036}
+--- !u!114 &7578523549986347076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091377559907799122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &1264800729066298057
 GameObject:
   m_ObjectHideFlags: 0

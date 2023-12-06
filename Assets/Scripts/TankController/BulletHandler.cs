@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 using System;
+using Photon.Pun;
 
 public class BulletHandler : NetworkBehaviour
 {
@@ -10,12 +11,12 @@ public class BulletHandler : NetworkBehaviour
     public float bulletTimeToLive = 3.0f;
     public GameObject objectPrefab;
     private bool controlsLocked = false;
-
+    PhotonView view; 
 
     // Update is called once per frame
     void Update()
     {
-        if (!controlsLocked && Input.GetKeyDown("space"))
+        if (!controlsLocked && Input.GetKeyDown("space") && view.IsMine)
         {
             SpawnObject();
             
