@@ -23,10 +23,12 @@ public class CreateAndJoin : MonoBehaviourPunCallbacks
    }
    public override void OnJoinedRoom(){
         Debug.Log("Entering Stage");
-        lobbyPanel.SetActive(false);
-        roomPanel.SetActive(true);
-        roomText.text = "Room name: " + PhotonNetwork.CurrentRoom.Name;
-        GameRequestManager.Instance.SendJoinRequest(PhotonNetwork.CurrentRoom.Name);
+        if (PhotonNetwork.CurrentRoom.Name != "ChatRoom")
+        {
+          lobbyPanel.SetActive(false);
+          roomPanel.SetActive(true);
+          roomText.text = "Room name: " + PhotonNetwork.CurrentRoom.Name;
+        }
     }
         
    public void JoinRoomInList(string roomName)

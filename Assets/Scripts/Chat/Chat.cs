@@ -1,82 +1,40 @@
 using UnityEngine;
-using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
-using ExitGames.Client.Photon;
-
 using TMPro;
 
-public class ChatSystem : MonoBehaviourPunCallbacks, IPunObservable
+public class ChatSystem : MonoBehaviourPunCallbacks
 {
-    [SerializeField] private TMP_Text chatText = null;
-    [SerializeField] private TMP_InputField inputField = null;
+    public TMP_InputField messageInput;
+    public TMP_Text chatText;
 
-    private string syncedMessage = "";
-
-    private const string ChatPropertyName = "LobbyChat";
-
-    public override void OnJoinedLobby()
-    {
-        PhotonNetwork.LocalPlayer.SetCustomProperties(new Hashtable {{ChatPropertyName, ""}});
-    }
+    public int maxMessages = 10; // Set the maximum number of displayed messages
 
     public void SendChatMessage()
     {
-        if (PhotonNetwork.InRoom) {
-            string message = $"{inputField.text}";
-            photonView.RPC("ReceiveMessage", RpcTarget.All, message); // Send the message to all players
-        }
-        else if (PhotonNetwork.InLobby) {
-            string playerName = PhotonNetwork.LocalPlayer.NickName;
-            string message = $"{playerName}: {inputField.text}";
-
-            // Get the existing chat and append the new message
-            string existingChat = (string)PhotonNetwork.LocalPlayer.CustomProperties[ChatPropertyName];
-            string updatedChat = $"{existingChat}\n{message}";
-
-            // Update the custom property for lobby chat
-            Hashtable customProps = new Hashtable {{ChatPropertyName, updatedChat}};
-            PhotonNetwork.LocalPlayer.SetCustomProperties(customProps);
-
-            Debug.Log(customProps.ToString());
-        }
-
-
-        inputField.text = ""; // Clear the input field
-    }
-
-    public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
-    {
-        if (changedProps.ContainsKey(ChatPropertyName))
+        string message = messageInput.text;
+        if (!string.IsNullOrEmpty(message))
         {
-            UpdateChatDisplay();
+            PhotonView photonView = PhotonView.Get(this);
+            photonView.RPC("RPC_SendMessage", RpcTarget.All, message);
+            messageInput.text = string.Empty;
         }
-    }
-
-    private void UpdateChatDisplay()
-    {
-        string lobbyChat = (string)PhotonNetwork.LocalPlayer.CustomProperties[ChatPropertyName];
-        chatText.text = lobbyChat;
     }
 
     [PunRPC]
-    private void ReceiveMessage(string message)
+    void RPC_SendMessage(string message)
     {
-        chatText.text += $"{message}\n"; // Display the received message
+        chatText.text += $"{message}\n";
+
+        // Check if the number of messages exceeds the limit
+        string[] messages = chatText.text.Split('\n');
+        if (messages.Length > maxMessages)
+        {
+            // Remove the oldest message
+            string[] newMessages = new string[messages.Length - 1];
+            System.Array.Copy(messages, 1, newMessages, 0, newMessages.Length);
+            chatText.text = string.Join("\n", newMessages);
+        }
     }
 
-    void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            // Sending data to others (PhotonNetwork.SendMonoMessage has assigned viewID)
-            stream.SendNext(syncedMessage);
-        }
-        else
-        {
-            // Receiving data from others (via network)
-            syncedMessage = (string)stream.ReceiveNext();
-            chatText.text = syncedMessage;
-        }
-    }
 }
