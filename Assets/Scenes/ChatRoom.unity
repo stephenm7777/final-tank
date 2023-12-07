@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -207,8 +207,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 23.87
+  m_fontSizeBase: 23.87
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -761,8 +761,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.0734, y: 4.147}
-  m_SizeDelta: {x: 1140.8927, y: 663.9896}
+  m_AnchoredPosition: {x: -1.0352, y: -8.305}
+  m_SizeDelta: {x: 1905.6, y: 1086.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1527280632
 MonoBehaviour:
@@ -907,8 +907,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 23.87
+  m_fontSizeBase: 23.87
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1495,8 +1495,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.275, y: -281.51514}
-  m_SizeDelta: {x: 789.45, y: 48.9697}
+  m_AnchoredPosition: {x: -6.275, y: -277}
+  m_SizeDelta: {x: 789.45, y: 72.9622}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2110765456
 MonoBehaviour:
@@ -1555,7 +1555,7 @@ MonoBehaviour:
   m_HideSoftKeyboard: 0
   m_CharacterValidation: 0
   m_RegexValue: 
-  m_GlobalPointSize: 14
+  m_GlobalPointSize: 23.87
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
