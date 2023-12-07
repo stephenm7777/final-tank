@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/ChatRoom.unity
     guid: db94735b0299f4aa2b78808aa3c96067
   - enabled: 1
+<<<<<<< Updated upstream
+=======
+    path: Assets/Scenes/Forgot password.unity
+    guid: 63aaf4a72d3a9a14199e70166cd0d597
+  - enabled: 1
+>>>>>>> Stashed changes
     path: Assets/Scenes/Game.unity
     guid: f0260fec9e79a9143ac9da3d55c0532f
   m_configObjects: {}
