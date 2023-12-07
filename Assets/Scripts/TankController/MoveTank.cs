@@ -8,6 +8,7 @@ public class MoveTank : MonoBehaviourPunCallbacks
     public float spinSpeed = 90.0f; 
     PhotonView view;
 
+
     void Start(){
             view = GetComponent<PhotonView>();
         }
@@ -16,6 +17,7 @@ public class MoveTank : MonoBehaviourPunCallbacks
             MoveTurret();
         }
     }
+
 
     void MoveTurret(){
         if(Input.GetKey(KeyCode.E)){

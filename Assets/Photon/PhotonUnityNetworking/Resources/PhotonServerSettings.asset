@@ -45,6 +45,13 @@ MonoBehaviour:
   - ApproveJoinRequest
   - RequestToJoinGame
   - SpawnBullet
+  - .ctor
+  - Damage
+  - GetHealth
+  - GetHealthPercentage
+  - HealthSystem_OnHealthChange
+  - Start
+  - OnCollisionEnter
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

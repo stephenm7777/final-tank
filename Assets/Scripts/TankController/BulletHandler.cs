@@ -41,20 +41,4 @@ public class BulletHandler : MonoBehaviourPunCallbacks
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Tank"))
-        {
-            HealthSystem tankHealth = collision.gameObject.GetComponent<HealthSystem>();
-            if (tankHealth != null)
-            {
-                tankHealth.Damage(10);
-            }
-
-            if (photonView.IsMine)
-            {
-                PhotonNetwork.Destroy(gameObject);
-            }
-        }
-    }
 }
