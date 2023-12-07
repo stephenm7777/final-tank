@@ -17,7 +17,9 @@ public class ChatSystem : MonoBehaviourPunCallbacks
         if (!string.IsNullOrEmpty(message))
         {
             PhotonView photonView = PhotonView.Get(this);
-            photonView.RPC("RPC_SendMessage", RpcTarget.All, message);
+            string username = PhotonNetwork.LocalPlayer.NickName;
+            string messageWithUsername = $"{username}: {message}";
+            photonView.RPC("RPC_SendMessage", RpcTarget.All, messageWithUsername);
             messageInput.text = string.Empty;
         }
     }
@@ -27,15 +29,12 @@ public class ChatSystem : MonoBehaviourPunCallbacks
     {
         chatText.text += $"{message}\n";
 
-        // Check if the number of messages exceeds the limit
         string[] messages = chatText.text.Split('\n');
         if (messages.Length > maxMessages)
         {
-            // Remove the oldest message
             string[] newMessages = new string[messages.Length - 1];
             System.Array.Copy(messages, 1, newMessages, 0, newMessages.Length);
             chatText.text = string.Join("\n", newMessages);
         }
     }
-
 }

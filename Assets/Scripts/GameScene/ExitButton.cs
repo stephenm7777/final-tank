@@ -6,9 +6,6 @@ public class ExitButton : MonoBehaviour
     public void OnClickLeaveGame(){
         if (PhotonNetwork.IsConnected){
             PhotonNetwork.LeaveRoom();
-        }
-        else
-        {
             LoadLobbyScene();
         }
     }

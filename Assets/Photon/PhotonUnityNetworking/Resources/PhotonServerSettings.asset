@@ -42,6 +42,9 @@ MonoBehaviour:
   - ReceiveMessage
   - GetMessage
   - RPC_SendMessage
+  - ApproveJoinRequest
+  - RequestToJoinGame
+  - SpawnBullet
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

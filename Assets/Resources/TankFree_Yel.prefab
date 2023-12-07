@@ -286,8 +286,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tankSpeed: 30
   tankRotationSpeed: 30
-  reticleTransform: {fileID: 7322583894276897316}
-  turrentTransform: {fileID: 7974211581296261330}
 --- !u!1 &1264800729066298057
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +810,9 @@ GameObject:
   - component: {fileID: 7974211581296261330}
   - component: {fileID: 4178764168403950618}
   - component: {fileID: 4572385493103272437}
+  - component: {fileID: 5273888897498644355}
+  - component: {fileID: 1332965143682311586}
+  - component: {fileID: 416580142447686079}
   m_Layer: 0
   m_Name: TankFree_Tower
   m_TagString: Untagged
@@ -886,6 +887,58 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5273888897498644355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4274776675616326670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f502b8d8fa8b73418ed43ca5bcb4501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinSpeed: 90
+--- !u!114 &1332965143682311586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4274776675616326670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 416580142447686079}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &416580142447686079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4274776675616326670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &4556252036640904956
 GameObject:
   m_ObjectHideFlags: 0
