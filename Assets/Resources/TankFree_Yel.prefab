@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 967434736783566057}
   - component: {fileID: 3365417265300766966}
   - component: {fileID: 7578523549986347076}
+  - component: {fileID: 7979938495900830282}
   m_Layer: 0
   m_Name: TankFree_Yel
   m_TagString: Tank
@@ -271,6 +272,22 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &7979938495900830282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091377559907799122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66fd4e3cb31cae448e62fb8fade0f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankSpeed: 30
+  tankRotationSpeed: 30
+  reticleTransform: {fileID: 7322583894276897316}
+  turrentTransform: {fileID: 7974211581296261330}
 --- !u!1 &1264800729066298057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,7 +1173,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -1376,7 +1394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 961941083
+  GlobalObjectIdHash: 1527200266
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -1398,7 +1416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchSpeed: 200
   bulletTimeToLive: 2
-  objectPrefab: {fileID: 4032486680806963122, guid: 4a2691a06d2be4e4cb20248df28a62a5, type: 3}
+  objectPrefab: {fileID: 9094009511398482965, guid: ebc8ef3e1eaa76c44aacba4e5ec67bf4, type: 3}
 --- !u!114 &7199501279535586924
 MonoBehaviour:
   m_ObjectHideFlags: 0

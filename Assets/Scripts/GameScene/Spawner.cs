@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        int randomNumber = Random.Range(0, spawnPoints.Length);
+        int randomNumber = Random.Range(0, spawnPoints.Length - 1);
         Transform spawnPoint = spawnPoints[randomNumber];
 
         string tankName = (string)PhotonNetwork.LocalPlayer.CustomProperties["TankFree_Yel"]; 
