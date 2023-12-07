@@ -1173,8 +1173,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents:
-  - {fileID: 0}
+  ObservedComponents: []
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -1416,7 +1415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchSpeed: 200
   bulletTimeToLive: 2
-  objectPrefab: {fileID: 9094009511398482965, guid: ebc8ef3e1eaa76c44aacba4e5ec67bf4, type: 3}
+  objectPrefab: {fileID: 4032486680806963122, guid: 4a2691a06d2be4e4cb20248df28a62a5, type: 3}
 --- !u!114 &7199501279535586924
 MonoBehaviour:
   m_ObjectHideFlags: 0
