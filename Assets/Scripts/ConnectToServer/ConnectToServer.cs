@@ -3,14 +3,23 @@ using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using TMPro;
+using PlayFab.ClientModels;
 
 public class ConnectToServer : MonoBehaviourPunCallbacks, ILobbyCallbacks {
-
-    private void Start()
+    public TMP_InputField input; 
+    public TMP_Text buttonText; 
+    public void OnClickConnect()
     { 
-        Debug.Log("Connecting to Photon...");
-        PhotonNetwork.AutomaticallySyncScene = true;
-        PhotonNetwork.ConnectUsingSettings(); 
+        if(input.text.Length >= 1){
+            PhotonNetwork.NickName = input.text;
+            buttonText.text = "Connecting";
+            Debug.Log("Connecting to Photon...");
+            PhotonNetwork.AutomaticallySyncScene = true;
+            PhotonNetwork.ConnectUsingSettings(); 
+        }
+ 
     }
 
     public override void OnConnectedToMaster()

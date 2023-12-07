@@ -1065,8 +1065,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthText: {fileID: 1883218736613799701}
   view: {fileID: 6190036031202735804}
-  exitGame: {fileID: 0}
-  game: {fileID: 0}
 --- !u!1 &6346050916233111414
 GameObject:
   m_ObjectHideFlags: 0
