@@ -11,18 +11,37 @@ public class ChatSystem : MonoBehaviourPunCallbacks
     public int maxMessages = 10; // Set the maximum number of displayed messages
 
     public void SendChatMessage()
+{
+    Debug.Log("Send Chat Message");
+    string message = messageInput.text;
+    if (!string.IsNullOrEmpty(message))
     {
-        Debug.Log("Send Chat Message");
-        string message = messageInput.text;
-        if (!string.IsNullOrEmpty(message))
-        {
-            PhotonView photonView = PhotonView.Get(this);
-            string username = PhotonNetwork.LocalPlayer.NickName;
-            string messageWithUsername = $"{username}: {message}";
-            photonView.RPC("RPC_SendMessage", RpcTarget.All, messageWithUsername);
-            messageInput.text = string.Empty;
-        }
+        PhotonView photonView = PhotonView.Get(this);
+        string username = PhotonNetwork.LocalPlayer.NickName;
+        
+        // Censor specific words
+        string censoredMessage = CensorMessage(message);
+
+        string messageWithUsername = $"{username}: {censoredMessage}";
+        photonView.RPC("RPC_SendMessage", RpcTarget.All, messageWithUsername);
+        messageInput.text = string.Empty;
     }
+}
+
+private string CensorMessage(string message)
+{
+    // Define a list of words to censor
+    string[] wordsToCensor = { "fuck", "shit" };
+
+    // Replace the specified words with asterisks
+    foreach (var word in wordsToCensor)
+    {
+        // Case-insensitive replacement
+        message = message.Replace(word, new string('*', word.Length));
+    }
+
+    return message;
+}
 
     [PunRPC]
     void RPC_SendMessage(string message)
